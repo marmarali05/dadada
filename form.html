@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+
+<body>
+
+	<h2>Выберите метод отправки:</h2>
+	<input type="radio" id="get" name="method" value="GET" onchange="document.getElementById('method').method = this.value">
+	<label for="contactChoice1">GET</label>
+
+	<input type="radio" id="post" name="method" value="POST" checked onchange="document.getElementById('method').method = this.value">
+	<label for="contactChoice2">POST</label>
+
+	<br><br>
+
+	<form action="dadata.php" id="method" method="POST">
+
+		<strong>Ваше имя<span class="mf-req">*</span></strong><br>
+		<input type="text" name="user_name" value=""><br>
+
+		<strong>Ваша фамилия<span class="mf-req">*</span></strong><br>
+		<input type="text" name="user_last_name" value=""><br>
+
+		<strong>Ваше отчество<span class="mf-req">*</span></strong><br>
+		<input type="text" name="user_second_name" value=""><br>
+
+		<input type="hidden" name="token" value="98d76562d6a610b3b009725a64f9bfdf071b9b0e"><br>
+		<input type="hidden" name="secret" value="c9db41e767695d05428d2aba6a00bf83bf763d10"><br>
+
+		<input type="submit" name="submit" value="Отправить">
+	</form>
+	
+</body>
+
+</html>
