@@ -158,14 +158,14 @@ class Dadata
 // За счёт этого не создаются новые сетевые соединения на каждый запрос,
 // а переиспользуется существующее.
 
-$token = $_POST['token'];
-$secret = $_POST['secret'];
+$token = $_REQUEST['token'];
+$secret = $_REQUEST['secret'];
 
 $dadata = new Dadata($token, $secret);
 $dadata->init();
 
 // Стандартизовать ФИО
-$result = $dadata->clean("name", $_POST['user_name']." ".$_POST['user_second_name']." ".$_POST['user_last_name']);
+$result = $dadata->clean("name", $_REQUEST['user_name']." ".$_REQUEST['user_second_name']." ".$_REQUEST['user_last_name']);
 
 echo '<pre>';
 print_r($result);
